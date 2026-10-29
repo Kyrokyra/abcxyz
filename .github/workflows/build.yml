@@ -1,0 +1,31 @@
+name: Build ReoFix
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Arrange files
+        run: |
+          mkdir -p ReoFix/reofixprefs/Resources ReoFix/layout/Library/PreferenceLoader/Preferences
+          cp Makefile control ReoFix.plist Tweak.x ReoFix/
+          cp prefs_Makefile ReoFix/reofixprefs/Makefile
+          cp RFXRootListController.h RFXRootListController.m ReoFix/reofixprefs/
+          cp prefs_Info.plist ReoFix/reofixprefs/Resources/Info.plist
+          cp prefs_Root.plist ReoFix/reofixprefs/Resources/Root.plist
+          cp loader_ReoFix.plist ReoFix/layout/Library/PreferenceLoader/Preferences/ReoFix.plist
+      - name: Install Theos
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl git build-essential
+          yes | bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
+      - name: Build
+        run: |
+          export THEOS="$HOME/theos"
+          cd ReoFix
+          make package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ReoFix-deb
+          path: ReoFix/packages/*.deb
