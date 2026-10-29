@@ -1,0 +1,9 @@
+Package: com.local.reofix
+Name: ReoFix
+Depends: mobilesubstrate (>= 0.9.5000), xyz.cypwn.reo
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Giữ nguyên tỉ lệ ảnh bìa trong player của Reo, bỏ nền xám
+Maintainer: me
+Author: me
+Section: Tweaks

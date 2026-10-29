@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Sửa giao diện player của Reo cho ảnh bìa ngang (thumbnail YouTube). Ảnh vuông (Spotify...) giữ nguyên kiểu của Reo. Thay đổi áp dụng khi màn hình khóa hiện lại hoặc khi đổi bài.</string>
+			<key>label</key>
+			<string>ReoFix</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.local.reofix</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Bật ReoFix</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.local.reofix</string>
+			<key>key</key>
+			<string>showNextUp</string>
+			<key>label</key>
+			<string>Hiện Next Up trong Reo</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Chỉ áp dụng cho ảnh không vuông. Mặc định 350 (khoảng 85% màn hình XS Max).</string>
+			<key>label</key>
+			<string>Chiều rộng ảnh ngang (pt)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>350.0</real>
+			<key>defaults</key>
+			<string>com.local.reofix</string>
+			<key>key</key>
+			<string>artworkWidth</string>
+			<key>max</key>
+			<real>414.0</real>
+			<key>min</key>
+			<real>200.0</real>
+			<key>showValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Kéo rộng khung tên bài, thanh thời gian, nút điều khiển. Mặc định 12. Áp dụng cho mọi bài.</string>
+			<key>label</key>
+			<string>Khung thông tin: rộng thêm mỗi bên (pt)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>12.0</real>
+			<key>defaults</key>
+			<string>com.local.reofix</string>
+			<key>key</key>
+			<string>panelWiden</string>
+			<key>max</key>
+			<real>30.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<true/>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>ReoFix</string>
+</dict>
+</plist>
